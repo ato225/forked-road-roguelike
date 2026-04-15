@@ -2,15 +2,6 @@
 
 모바일과 데스크톱 브라우저에서 동작하는 선택지 기반 웹 로그라이크입니다.
 
-## 실행
-
-```powershell
-cd C:\Users\user\side-scroller-demo
-python -m http.server 8000
-```
-
-브라우저에서 `http://localhost:8000`을 열면 됩니다.
-
 ## 규칙
 
 - 매 턴마다 `안전한 길`, `평범한 길`, `위험한 길` 중 하나를 선택합니다.
