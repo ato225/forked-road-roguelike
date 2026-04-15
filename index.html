@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>갈림길 로그라이크</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero-panel panel">
+      <div>
+        <p class="eyebrow">Mobile Web Roguelike</p>
+        <h1>갈림길 로그라이크</h1>
+        <p class="hero-copy">
+          매 턴마다 <strong>안전한 길</strong>, <strong>평범한 길</strong>, <strong>위험한 길</strong> 중 하나를 고르세요.
+          길의 성향에 따라 마을, 전투, 보물, 함정, 성소 같은 룸이 확률적으로 나타납니다.
+        </p>
+      </div>
+      <button id="restart-btn" class="ghost-btn" type="button">새 게임</button>
+    </section>
+
+    <section class="top-grid">
+      <article class="panel stats-panel">
+        <div class="panel-head">
+          <h2>플레이어</h2>
+          <span id="run-indicator" class="pill">탐험 1층</span>
+        </div>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <span>체력</span>
+            <strong id="hp-stat">0 / 0</strong>
+          </div>
+          <div class="stat-card">
+            <span>공격력</span>
+            <strong id="atk-stat">0</strong>
+          </div>
+          <div class="stat-card">
+            <span>방어력</span>
+            <strong id="def-stat">0</strong>
+          </div>
+          <div class="stat-card">
+            <span>골드</span>
+            <strong id="gold-stat">0G</strong>
+          </div>
+        </div>
+        <div class="resource-row">
+          <div>
+            <span class="label">포션</span>
+            <strong id="potion-count">0</strong>
+          </div>
+          <div>
+            <span class="label">폭탄</span>
+            <strong id="bomb-count">0</strong>
+          </div>
+          <div>
+            <span class="label">방패약</span>
+            <strong id="tonic-count">0</strong>
+          </div>
+        </div>
+      </article>
+
+      <article class="panel room-panel">
+        <div class="panel-head">
+          <h2 id="room-title">여정의 시작</h2>
+          <span id="room-tag" class="pill neutral">대기</span>
+        </div>
+        <p id="room-description" class="room-description"></p>
+        <div id="enemy-box" class="enemy-box hidden">
+          <div class="enemy-face">
+            <span id="enemy-name">적</span>
+            <strong id="enemy-hp">0 / 0</strong>
+          </div>
+          <div class="enemy-stats">
+            <span id="enemy-atk">공격 0</span>
+            <span id="enemy-def">방어 0</span>
+          </div>
+        </div>
+        <div id="action-area" class="action-area"></div>
+      </article>
+    </section>
+
+    <section class="bottom-grid">
+      <article class="panel path-panel">
+        <div class="panel-head">
+          <h2>다음 갈림길</h2>
+          <span class="pill accent">선택지 3개</span>
+        </div>
+        <div id="path-buttons" class="path-buttons"></div>
+      </article>
+
+      <article class="panel inventory-panel">
+        <div class="panel-head">
+          <h2>인벤토리</h2>
+          <span id="inventory-summary" class="pill soft">비어 있음</span>
+        </div>
+        <div id="inventory-list" class="inventory-list"></div>
+        <div class="gear-block">
+          <h3>영구 장비 효과</h3>
+          <ul id="gear-list" class="gear-list"></ul>
+        </div>
+      </article>
+    </section>
+
+    <section class="panel log-panel">
+      <div class="panel-head">
+        <h2>모험 기록</h2>
+        <span id="log-count" class="pill soft">0개</span>
+      </div>
+      <div id="log-list" class="log-list"></div>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
